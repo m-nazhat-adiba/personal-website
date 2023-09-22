@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col gap-10 py-20">
+    <div className="flex flex-col gap-10 py-20 px-4 md:px-0">
       <div className="flex flex-col items-center gap-2">
         <h1 className="text-5xl md:text-6xl font-semibold text-gray-500">
           Get <span className="text-red-600">in Touch</span>
