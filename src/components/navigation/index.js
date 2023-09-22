@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import Logo from "@/assets/svg/Logo.svg";
 import clsx from "clsx";
 import { Icon } from "@iconify/react";
 
@@ -12,7 +11,15 @@ const NavBar = () => {
   return (
     <div className="flex flex-col w-full justify-between py-8 px-4 md:px-0">
       <div className="flex w-full justify-between">
-        <Image src={Logo} alt="logo" className="h-8 w-auto" />
+        <div className="flex h-8 w-auto">
+          <Image
+            src="/Logo.svg"
+            alt="logo"
+            width={68}
+            height={32}
+            priority={false}
+          />
+        </div>
         {/* Navlist md: */}
         <div className="hidden md:block">
           <ul className="flex list-none text-sm gap-8">
