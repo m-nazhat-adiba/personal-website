@@ -9,19 +9,19 @@ const NavBar = () => {
     setIsVisible(!isVisible);
   };
   return (
-    <div className="flex flex-col w-full justify-between py-8 px-4 md:px-0">
+    <div className="flex flex-col w-full justify-between my-8 py-4 px-4 md:px-2 bg-gray-900 bg-opacity-60 rounded-full">
       <div className="flex w-full justify-between">
-        <div className="flex h-8 w-auto">
+        <div className="flex h-6 w-auto">
           <Image
             src="/Logo.svg"
             alt="logo"
-            width={68}
-            height={32}
+            width={72}
+            height={72}
             priority={false}
           />
         </div>
         {/* Navlist md: */}
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center px-4">
           <ul className="flex list-none text-sm gap-8">
             <li>HOME</li>
             <li>WORKS</li>
