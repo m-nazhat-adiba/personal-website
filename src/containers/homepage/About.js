@@ -12,11 +12,12 @@ const About = () => {
         className="rounded-full w-36 h-auto"
       />
       <h1 className="text-3xl text-center">
-        "Hi there, I'm <span className="font-medium">Nazhat Adiba</span>, a
+        &quot;Hi there, I&apos;m{" "}
+        <span className="font-medium">Nazhat Adiba</span>, a
         <span className="font-medium">Front-End Developer</span> with a knack
         for crafting delightful web interfaces. My goal is to blend creativity
         and code to make user-friendly websites. Eager to dive into web
-        development and contribute to innovative projects."
+        development and contribute to innovative projects.&quot;
       </h1>
     </div>
   );
