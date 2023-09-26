@@ -9,7 +9,7 @@ const NavBar = () => {
     setIsVisible(!isVisible);
   };
   return (
-    <div className="flex flex-col w-full justify-between my-8 py-4 px-4 md:px-2 bg-gray-900 bg-opacity-60 rounded-full">
+    <div className="flex flex-col w-full justify-between my-8 py-4 bg-gray-900 bg-opacity-60 rounded-full">
       <div className="flex w-full justify-between">
         <div className="flex h-6 w-auto">
           <Image
