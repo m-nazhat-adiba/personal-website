@@ -3,7 +3,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="flex flex-col gap-20 w-full items-center justify-center py-52">
+    <div className="flex flex-col gap-20 w-full items-center justify-center py-48">
       <Image
         src="/photo.png"
         alt="photo"
