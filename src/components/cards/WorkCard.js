@@ -7,7 +7,7 @@ const WorkCard = ({ data }) => {
   return (
     <div
       className={clsx(
-        "flex gap-8 items-center md:items-start",
+        "flex gap-8 items-center md:items-end",
         data.id % 2 === 0
           ? "flex-col md:flex-row-reverse"
           : "flex-col md:flex-row"
@@ -24,7 +24,7 @@ const WorkCard = ({ data }) => {
         <h1 className="text-center md:text-left text-3xl xl:text-4xl uppercase font-semibold tracking-widest">
           {data.title}
         </h1>
-        <p className="text-center md:text-left text-2xl xl:text-3xl leading-normal text-gray-300 font-semibold">
+        <p className="text-center md:text-left text-2xl xl:text-3xl/normal text-gray-300 font-semibold">
           {data.desc}
         </p>
         <div className="flex gap-5 my-1 mb-4 justify-center md:justify-start">
