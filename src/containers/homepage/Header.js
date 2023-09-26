@@ -30,9 +30,12 @@ const Header = () => {
         <p className="md:block hidden text-gray-500 w-2/3 text-right mr-4">
           Feel free to check my resume
         </p>
-        <button className="flex items-center gap-3 my-4 md:my-0 px-6 py-2 border-2 w-fit border-gray-500 text-gray-500 rounded-full">
-          <Icon icon="akar-icons:download" className="text-lg" />
-          <p>My Resume</p>
+        <button className="group flex items-center gap-3 my-4 md:my-0 px-6 py-2 border-2 w-fit border-gray-500 text-gray-500 rounded-full duration-200 hover:border-gray-400 hover:scale-110">
+          <Icon
+            icon="akar-icons:download"
+            className="text-lg group-hover:text-gray-400"
+          />
+          <p className="group-hover:text-gray-400">My Resume</p>
         </button>
       </div>
       <p className="md:block hidden absolute right-0 bottom-14 text-gray-400">
