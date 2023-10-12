@@ -5,6 +5,7 @@ const worksData = [
     title: "Mudocafe",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.",
     tags: ["React", "Tailwind", "Vite", "Responsive"],
+    url: "https://joyful-monstera-ccea42.netlify.app/",
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ const worksData = [
     title: "Pokedex",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.",
     tags: ["React", "Tailwind", "Next.js", "Responsive"],
+    url: "https://sweet-salamander-29eb3e.netlify.app/",
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ const worksData = [
     title: "Moviever",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.",
     tags: ["React", "CSS", "Vite", "Responsive"],
+    url: "",
   },
 ];
 
