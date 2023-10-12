@@ -36,10 +36,11 @@ const WorkCard = ({ data }) => {
         </div>
         <button className="group mx-auto md:mx-0 flex flex-row-reverse items-center gap-3 my-4 md:my-0 px-6 py-2 border-2 w-fit border-gray-500 text-gray-300 rounded-full duration-200 hover:border-gray-400 hover:scale-110">
           <Icon
+            href={data.url}
             icon="akar-icons:chevron-right-small"
             className="text-lg group-hover:text-gray-300"
           />
-          <p className="group-hover:text-gray-300">My Resume</p>
+          <p className="group-hover:text-gray-300">View Project</p>
         </button>
       </div>
     </div>
