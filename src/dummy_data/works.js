@@ -21,7 +21,7 @@ const worksData = [
     title: "Moviever",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.",
     tags: ["React", "CSS", "Vite", "Responsive"],
-    url: "",
+    url: "/",
   },
 ];
 
