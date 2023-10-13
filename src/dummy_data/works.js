@@ -21,7 +21,7 @@ const worksData = [
     title: "The Blog",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.",
     tags: ["React", "Tailwind", "Next.js", "Next UI"],
-    url: "https://sparkling-crostata-325f66.netlify.app/",
+    url: "https://11-11-news.vercel.app/",
   },
 ];
 
