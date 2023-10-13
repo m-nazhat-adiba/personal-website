@@ -1,5 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -13,25 +14,25 @@ const Footer = () => {
         </p>
       </div>
       <div className="flex gap-10 md:gap-14 justify-center text-gray-500">
-        <Icon
-          href="https://www.m.nazhat.adiba@gmail.com"
-          icon="akar-icons:envelope"
-          className="h-5 w-5 md:h-7 md:w-7"
-        />
-        <Icon
-          href="https://github.com/m-nazhat-adiba"
-          icon="akar-icons:github-fill"
-          className="h-5 w-5 md:h-7 md:w-7"
-        />
+        <Link href="https://www.m.nazhat.adiba@gmail.com">
+          <Icon icon="akar-icons:envelope" className="h-5 w-5 md:h-7 md:w-7" />
+        </Link>
+        <Link href="https://github.com/m-nazhat-adiba">
+          <Icon
+            icon="akar-icons:github-fill"
+            className="h-5 w-5 md:h-7 md:w-7"
+          />
+        </Link>
         <Icon
           icon="akar-icons:telegram-fill"
           className="h-5 w-5 md:h-7 md:w-7"
         />
-        <Icon
-          href="https://www.linkedin.com/in/mnadiba"
-          icon="akar-icons:linkedin-fill"
-          className="h-5 w-5 md:h-7 md:w-7"
-        />
+        <Link href="https://www.linkedin.com/in/mnadiba">
+          <Icon
+            icon="akar-icons:linkedin-fill"
+            className="h-5 w-5 md:h-7 md:w-7"
+          />
+        </Link>
       </div>
     </div>
   );
