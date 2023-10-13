@@ -17,8 +17,8 @@ const worksData = [
   },
   {
     id: 3,
-    src: "/work-moviever.png",
-    title: "Moviever",
+    src: "/work-the-blog.png",
+    title: "The Blog",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.",
     tags: ["React", "CSS", "Vite", "Responsive"],
     url: "/",
