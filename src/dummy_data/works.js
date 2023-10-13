@@ -20,7 +20,7 @@ const worksData = [
     src: "/work-the-blog.png",
     title: "The Blog",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.",
-    tags: ["React", "CSS", "Vite", "Responsive"],
+    tags: ["React", "Tailwind", "Next.js", "Next UI"],
     url: "https://sparkling-crostata-325f66.netlify.app/",
   },
 ];
