@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react";
 const Header = () => {
   return (
     <div className="relative flex flex-col-reverse xl:flex-col w-full h-[calc(100vh_-_104px)] md:h-[90vh] lg:items-center xl:justify-end">
-      <div className="lg:flex absolute -z-50 lg:opacity-100 opacity-25 w-full lg:w-[500px] xl:w-[800px] h-full md:h-auto mx-auto">
+      <div className="lg:flex absolute -z-50 lg:opacity-100 opacity-25 w-full lg:w-[500px] xl:w-[600px] 2xl:w-[800px] h-full md:h-auto mx-auto">
         <Image
           src={Banner}
           width={1000}
