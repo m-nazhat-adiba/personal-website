@@ -1,8 +1,8 @@
-import Layout from "@/components/layout";
-import Header from "@/containers/homepage/Header";
-import About from "@/containers/homepage/About";
-import Works from "@/containers/homepage/Works";
-import Skills from "@/containers/homepage/Skills";
+import Layout from "@/components/common/layout";
+import Header from "@/components/homepage/Header";
+import About from "@/components/homepage/About";
+import Works from "@/components/homepage/Works";
+import Skills from "@/components/homepage/Skills";
 
 export default function Home() {
   return (
