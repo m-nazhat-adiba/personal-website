@@ -3,8 +3,8 @@ const worksData = [
     id: 1,
     src: "/work-mudocafe.png",
     title: "Mudocafe",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.",
-    tags: ["React", "Tailwind", "Vite", "Responsive"],
+    desc: "Mudocafe is a user-friendly food ordering website that offers a various menu, providing detailed information, estimation cooking time and promos.",
+    tags: ["React", "Tailwind", "Javascript"],
     url: "https://joyful-monstera-ccea42.netlify.app/",
   },
   {
@@ -12,7 +12,7 @@ const worksData = [
     src: "/work-pokedex.png",
     title: "Pokedex",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem non feugiat egestas amet.",
-    tags: ["React", "Tailwind", "Next.js", "Responsive"],
+    tags: ["React", "Tailwind", "Next.js"],
     url: "https://sweet-salamander-29eb3e.netlify.app/",
   },
   {
