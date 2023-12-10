@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import Image from "next/image";
-import Banner from "../../../public/Header-2.png";
 import { Icon } from "@iconify/react";
 
 import gsap from "gsap";
