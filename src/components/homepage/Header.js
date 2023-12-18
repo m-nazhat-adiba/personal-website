@@ -43,7 +43,7 @@ const Header = () => {
           id="container"
           className="relative w-full h-full overflow-hidden flex justify-center"
         >
-          <div className="absolute top-0 w-full h-full container">
+          <div className="absolute top-0 w-full h-full container px-4 xl:px-2 ">
             <div className="bottom-[44%] absolute flex flex-col md:left-0 lg:bottom-14 gap-4">
               <h1 className="w-5 md:text-5xl text-4xl text-red-600 font-semibold leading-tight">
                 NAZHAT ADIBA
