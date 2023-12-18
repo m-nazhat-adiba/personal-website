@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 
 import gsap from "gsap";
 
-const count = 100;
+const count = 50;
 const particleClass = "h-1 w-1 bg-white rounded-full";
 const particleColors = ["#aa00e2", "#7a169c", "#9e67b1"];
 
