@@ -38,7 +38,7 @@ const Header = () => {
   };
   return (
     <div className="bg-gradient-to-r from-[rgb(0,0,0)_0%] to-[rgba(86,28,110,0.5)_90%]">
-      <div className=" flex flex-col-reverse xl:flex-col w-full h-[calc(100vh_-_104px)] md:h-screen lg:items-center xl:justify-end">
+      <div className=" flex flex-col-reverse xl:flex-col w-full h-screen lg:items-center xl:justify-end">
         <div
           id="container"
           className="relative w-full h-full overflow-hidden flex justify-center"
