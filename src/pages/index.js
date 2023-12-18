@@ -10,9 +10,11 @@ export default function Home() {
       <div className="flex flex-col gap-24 mb-8">
         <Header />
         <div className="container mx-auto flex flex-col gap-24 ">
-          <About />
-          <Works />
-          <Skills />
+          <div className="px-4 xl:px-2 w-full">
+            <About />
+            <Works />
+            <Skills />
+          </div>
         </div>
       </div>
     </Layout>
