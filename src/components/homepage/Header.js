@@ -3,46 +3,11 @@ import { Icon } from "@iconify/react";
 
 import gsap from "gsap";
 
-const count = 50;
-const particleClass = "h-1 w-1 bg-white rounded-full";
-const particleColors = ["#aa00e2", "#7a169c", "#9e67b1"];
-
 const Header = () => {
-  useEffect(() => {
-    const container = document.getElementById("container");
-    let w = container.offsetWidth;
-    let h = container.offsetHeight;
-    let elem;
-
-    for (let i = 0; i < count; i++) {
-      elem = document.createElement("div");
-      elem.className = particleClass;
-      container.appendChild(elem);
-      gsap.set(elem, {
-        x: gsap.utils.random(0, w) - w,
-        y: gsap.utils.random(0, h),
-        scale: gsap.utils.random(0.5, 1),
-        backgroundColor: gsap.utils.random(particleColors),
-      });
-      anim(elem, w);
-    }
-  }, []);
-
-  const anim = (elem, w) => {
-    gsap.to(elem, gsap.utils.random(8, 10), {
-      x: w,
-      ease: "none",
-      repeat: -1,
-      delay: -10,
-    });
-  };
   return (
-    <div className="bg-gradient-to-r from-[rgb(0,0,0)_0%] to-[rgba(86,28,110,0.5)_90%]">
+    <div>
       <div className=" flex flex-col-reverse xl:flex-col w-full h-screen lg:items-center xl:justify-end">
-        <div
-          id="container"
-          className="relative w-full h-full overflow-hidden flex justify-center"
-        >
+        <div className="relative w-full h-full overflow-hidden flex justify-center">
           <div className="absolute top-0 w-full h-full container px-4 xl:px-2 ">
             <div className="bottom-[44%] absolute flex flex-col md:left-0 lg:bottom-14 gap-4">
               <h1 className="w-5 md:text-5xl text-4xl text-red-600 font-semibold leading-tight">
