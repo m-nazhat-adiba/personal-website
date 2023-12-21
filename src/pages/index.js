@@ -40,10 +40,10 @@ export default function Home() {
     });
   };
   return (
-    <div className="bg-gradient-to-r from-[rgb(0,0,0)_0%] to-[rgba(86,28,110,0.5)_90%] w-full h-full relative">
+    <div className=" w-full h-full relative">
       <div
         id="container"
-        className="absolute w-full h-full overflow-hidden flex flex-col justify-center z-50"
+        className="absolute w-full h-full overflow-hidden flex flex-col justify-center top-0 bg-gradient-to-r from-[rgb(0,0,0)_0%] to-[rgba(86,28,110,0.5)_90%] -z-10"
       ></div>
       <Layout>
         <Header />
