@@ -9,12 +9,10 @@ export default function Home() {
     <Layout>
       <div className="flex flex-col gap-24 mb-8">
         <Header />
-        <div className="container mx-auto flex flex-col gap-24 ">
-          <div className="px-4 xl:px-2 w-full">
-            <About />
-            <Works />
-            <Skills />
-          </div>
+        <div className="container mx-auto flex flex-col gap-24 px-4 xl:px-2 w-full">
+          <About />
+          <Works />
+          <Skills />
         </div>
       </div>
     </Layout>
