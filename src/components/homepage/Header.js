@@ -19,7 +19,7 @@ const Header = () => {
       elem.className = particleClass;
       container.appendChild(elem);
       gsap.set(elem, {
-        x: gsap.utils.random(0, w) - w * 0.5,
+        x: gsap.utils.random(0, w) - w,
         y: gsap.utils.random(0, h),
         scale: gsap.utils.random(0.5, 1),
         backgroundColor: gsap.utils.random(particleColors),
@@ -29,7 +29,7 @@ const Header = () => {
   }, []);
 
   const anim = (elem, w) => {
-    gsap.to(elem, gsap.utils.random(7, 10), {
+    gsap.to(elem, gsap.utils.random(8, 10), {
       x: w,
       ease: "none",
       repeat: -1,
