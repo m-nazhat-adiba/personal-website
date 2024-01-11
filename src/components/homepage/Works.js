@@ -12,7 +12,7 @@ const Works = () => {
       </h1>
       <div className="flex flex-col gap-20">
         {chronologicData.map((item, key) =>
-          key < 3 ? <WorkCard key={key} data={item} /> : null
+          key < 1 ? <WorkCard key={key} data={item} /> : null
         )}
       </div>
     </div>
