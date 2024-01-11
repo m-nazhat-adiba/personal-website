@@ -157,7 +157,7 @@ export default function Home() {
               <Header />
               <div className="relative w-full">
                 <img src="mars.png" className="w-full" />
-                <div className="absolute top-1/3 w-full flex">
+                <div className="absolute top-1/4 w-full flex">
                   <div className="container mx-auto">
                     <Works />
                   </div>
