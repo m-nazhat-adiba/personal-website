@@ -5,19 +5,62 @@ import Works from "@/components/homepage/Works";
 import Skills from "@/components/homepage/Skills";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const count = 200;
 const particleClass = "h-1 w-1 bg-white rounded-full";
 const particleColors = ["#aa00e2", "#7a169c", "#9e67b1"];
 
+const starCount = 500;
+const starClass = "h-1 w-1 rounded-full";
+const starColors = ["#aa00e2", "#f0f0f0"];
+
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+
   const nextLoad = () => {
     rocketOutAnim();
     setTimeout(() => {
       setIsLoading(false);
     }, 1000);
-    // setIsLoading(false);
+  };
+
+  const stationaryStarAnim = () => {
+    const container = document.getElementById("field");
+    let w = container?.offsetWidth;
+    let h = container?.offsetHeight;
+    let star;
+    let randNum;
+
+    for (let i = 0; i < starCount; i++) {
+      star = document.createElement("div");
+      star.className = starClass;
+      container?.appendChild(star);
+      gsap.set(star, {
+        x: gsap.utils.random(0, w),
+        y: gsap.utils.random(0, h) - 0.75 * h,
+        scale: gsap.utils.random(0.5, 2),
+        backgroundColor: gsap.utils.random(starColors),
+      });
+      randNum = Math.random();
+      if (randNum % 2) {
+        blink(star);
+      }
+    }
+  };
+
+  const blink = (elem) => {
+    gsap.to(elem, gsap.utils.random(1, 5), {
+      delay: -10,
+      stagger: 1,
+      opacity: 0,
+      ease: "power1.in",
+      yoyo: true,
+      repeat: -1,
+      duration: 10,
+    });
   };
 
   const rocketOutAnim = () => {
@@ -64,19 +107,24 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    pulseRocketAnim();
-    particleAnim();
-  }, [isLoading]);
-
   const anim = (elem, w) => {
-    gsap.to(elem, gsap.utils.random(5, 10), {
+    gsap.to(elem, gsap.utils.random(1, 5), {
       x: w,
       ease: "none",
       repeat: -1,
       delay: -10,
     });
   };
+
+  useEffect(() => {
+    if (isLoading) {
+      pulseRocketAnim();
+      particleAnim();
+    } else {
+      stationaryStarAnim();
+    }
+  }, [isLoading]);
+
   return (
     <div className=" w-full h-full relative">
       {isLoading ? (
@@ -96,20 +144,37 @@ export default function Home() {
             GO
           </button>
         </section>
-      ) : (
-        <section className="bg-gradient-to-r from-[rgb(0,0,0)_0%] to-[rgba(86,28,110,0.5)_90%]">
+      ) : null}
+
+      {!isLoading ? (
+        <section className="bg-gradient-to-r from-[rgb(0,0,0)_0%] to-[rgba(86,28,110,0.6)_120%]">
           <Layout>
-            <Header />
-            <div className="container mx-auto flex flex-col gap-24 px-4 xl:px-2 w-full">
-              <About />
-              <Works />
-              <div className="mt-20 mb-16">
-                <Skills />
+            <div
+              id="field"
+              className="absolute w-full h-1/2 overflow-hidden justify-center top-0"
+            ></div>
+            <div className="mx-auto flex flex-col px-4 xl:px-2 w-full">
+              <Header />
+              <div className="relative w-full">
+                <img src="mars.png" className="w-full" />
+                <div className="absolute top-1/3 w-full flex">
+                  <div className="container mx-auto">
+                    <Works />
+                  </div>
+                </div>
+              </div>
+              <div className="bg-[#280A2D]">
+                <div className="container mx-auto">
+                  <About />
+                  <div className="mt-20 mb-16">
+                    <Skills />
+                  </div>
+                </div>
               </div>
             </div>
           </Layout>
         </section>
-      )}
+      ) : null}
     </div>
   );
 }
