@@ -20,20 +20,20 @@ const NavBar = () => {
             priority={false}
           />
         </div>
-        {/* Navlist md: */}
-        <div className="hidden md:flex items-center px-4">
-          <ul className="flex list-none text-sm gap-8">
-            <li>HOME</li>
-            <li>WORKS</li>
-            <li>CONTACT</li>
-          </ul>
-        </div>
         {/* Burger */}
         <Icon
           icon="akar-icons:three-line-horizontal"
           className="text-red-600 w-8 h-8 block md:hidden"
           onClick={handleNavList}
         />
+        {/* Navlist md: */}
+        <div className="hidden w-f md:flex items-center px-4">
+          <ul className="flex list-none text-sm gap-8">
+            <li>HOME</li>
+            <li>WORKS</li>
+            <li>CONTACT</li>
+          </ul>
+        </div>
       </div>
       <div className="block md:hidden relative">
         <ul

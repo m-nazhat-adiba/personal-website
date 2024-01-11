@@ -4,14 +4,14 @@ import Footer from "../footer";
 
 const Layout = ({ children }) => {
   return (
-    <div className="w-full">
-      <div className="relative w-full top-0 container mx-auto">
-        <div className="absolute w-full px-4 xl:px-2">
-          <NavBar />
-        </div>
+    <div className="relative w-full">
+      <div className="absolute w-full px-4 xl:px-6">
+        <NavBar />
       </div>
       {children}
-      <Footer />
+      <div className="bg-[#280A2D]">
+        <Footer />
+      </div>
     </div>
   );
 };
