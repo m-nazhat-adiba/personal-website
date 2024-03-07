@@ -6,6 +6,7 @@ import Skills from "@/components/homepage/Skills";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import Head from "next/head"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -127,6 +128,9 @@ export default function Home() {
 
   return (
     <div className=" w-full h-full relative">
+      <Head>
+          <title>Nazhat Adiba</title>
+      </Head>
       {isLoading ? (
         <section className="w-full h-screen flex flex-col justify-center items-center relative">
           <div
