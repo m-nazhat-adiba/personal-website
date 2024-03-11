@@ -7,7 +7,7 @@ const Skills = () => {
       <h1 className="text-4xl text-gray-400 font-semibold text-center">
         Used <span className="text-red-500">Technologies</span>
       </h1>
-      <div className="grid grid-cols-3 md:grid-cols-6 xl:flex gap-8 justify-center text-7xl text-gray-500">
+      <div className="grid grid-cols-3 md:grid-cols-6 xl:flex gap-8 justify-center text-7xl text-gray-800">
         <Icon icon="bxl:react" className="mx-auto" />
         <Icon icon="fa6-brands:square-js" className="p-1 mx-auto" />
         <Icon icon="bxl:tailwind-css" className="mx-auto" />

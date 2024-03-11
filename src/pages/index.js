@@ -6,7 +6,7 @@ import Skills from "@/components/homepage/Skills";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import Head from "next/head"
+import Head from "next/head";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -117,6 +117,23 @@ export default function Home() {
     });
   };
 
+  // const scrollAnim = () => {
+  //   const tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: "#field",
+  //       start: "top top",
+  //       end: "bottom top",
+  //       scrub: true,
+  //     },
+  //   });
+
+  //   gsap.utils.toArray(".parallax").forEach((layer) => {
+  //     const depth = layer.dataset.depth;
+  //     const movement = -(layer.offsetHeight * depth);
+  //     tl.to(layer, { y: movement, ease: "none" }, 0);
+  //   });
+  // };
+
   useEffect(() => {
     if (isLoading) {
       pulseRocketAnim();
@@ -124,13 +141,11 @@ export default function Home() {
     } else {
       stationaryStarAnim();
     }
+    // scrollAnim();
   }, [isLoading]);
 
   return (
     <div className=" w-full h-full relative">
-      <Head>
-          <title>Nazhat Adiba</title>
-      </Head>
       {isLoading ? (
         <section className="w-full h-screen flex flex-col justify-center items-center relative">
           <div
@@ -157,24 +172,28 @@ export default function Home() {
               id="field"
               className="absolute w-full h-1/2 overflow-hidden justify-center top-0"
             ></div>
-            <div className="mx-auto flex flex-col px-4 xl:px-2 w-full">
+            <div className=" mx-auto flex flex-col xl:px-2 w-full">
               <Header />
-              <div className="relative w-full">
-                <img src="mars.png" className="w-full" />
-                <div className="absolute top-1/4 w-full flex">
-                  <div className="container mx-auto">
-                    <Works />
+              <section className="w-full">
+                <div className="relative w-full">
+                  <div className="w-full flex">
+                    <div className="container mx-auto mt-40">
+                      <Works />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="bg-[#280A2D]">
-                <div className="container mx-auto">
-                  <About />
-                  <div className="mt-20 mb-16">
-                    <Skills />
+                <div className="w-full relative">
+                  <div className="flex flex-col items-center justify-center absolute w-full md:bottom-64 bottom-2">
+                    <div className="container mx-auto">
+                      <About />
+                    </div>
+                    <div className="mt-20 mb-16 container mx-auto">
+                      <Skills />
+                    </div>
                   </div>
+                  <img src="mars.png" className="w-full" />
                 </div>
-              </div>
+              </section>
             </div>
           </Layout>
         </section>
