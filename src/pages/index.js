@@ -172,7 +172,7 @@ export default function Home() {
               id="field"
               className="absolute w-full h-1/2 overflow-hidden justify-center top-0"
             ></div>
-            <div className=" mx-auto flex flex-col xl:px-2 w-full">
+            <div className=" mx-auto flex flex-col w-full">
               <Header />
               <section className="w-full">
                 <div className="relative w-full">
