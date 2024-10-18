@@ -3,12 +3,13 @@ import Image from "next/image";
 import React from "react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import { Button } from "../buttons";
 
 const WorkCard = ({ data }) => {
   return (
     <div
       className={clsx(
-        "flex gap-8 items-center xl:items-end",
+        "flex gap-8 items-center xl:items-end bg-gray-200 bg-opacity-10 p-8 rounded-lg",
         data.id % 2 === 0
           ? "flex-col md:flex-row-reverse"
           : "flex-col md:flex-row"
@@ -25,7 +26,7 @@ const WorkCard = ({ data }) => {
         <h1 className="text-center md:text-left text-3xl xl:text-4xl uppercase font-semibold tracking-widest">
           {data.title}
         </h1>
-        <p className="text-center md:text-left text-xl xl:text-3xl/normal text-gray-300 font-semibold">
+        <p className="text-center md:text-left text-xl xl:text-2xl/normal text-gray-300 font-semibold">
           {data.desc}
         </p>
         <div className="flex gap-5 my-1 mb-4 justify-center md:justify-start">
@@ -35,15 +36,7 @@ const WorkCard = ({ data }) => {
             </p>
           ))}
         </div>
-        <Link href={data.url}>
-          <button className="group mx-auto md:mx-0 flex flex-row-reverse items-center gap-3 my-4 md:my-0 px-6 py-2 border-2 w-fit border-gray-500 text-gray-300 rounded-full duration-200 hover:border-gray-400 hover:scale-110">
-            <Icon
-              icon="akar-icons:chevron-right-small"
-              className="text-lg group-hover:text-gray-300"
-            />
-            <p className="group-hover:text-gray-300">View Project</p>
-          </button>
-        </Link>
+        <Button target={data.url}></Button>
       </div>
     </div>
   );
