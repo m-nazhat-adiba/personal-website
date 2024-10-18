@@ -10,12 +10,12 @@ import { SkillCard } from "@/components/common/cards/SkillCard";
 export default function Home() {
   const trackList = [
     {
-      title: "I Really Wanna Stay at Your House",
-      uri: "spotify:track:7mykoq6R3BArsSpNDjFQTm",
-    },
-    {
       title: "Major Crimes",
       uri: "spotify:track:3nh5RSXnRSHWuQbOJvQr0g",
+    },
+    {
+      title: "I Really Wanna Stay at Your House",
+      uri: "spotify:track:7mykoq6R3BArsSpNDjFQTm",
     },
     {
       title: "Who's Ready For Tomorrow",
