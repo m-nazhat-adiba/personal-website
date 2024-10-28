@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React, { useEffect } from "react";
-import { gsap, Linear } from "gsap";
+import React, { useEffect } from 'react';
+import { gsap, Linear } from 'gsap';
 
 export default function Test() {
   return (

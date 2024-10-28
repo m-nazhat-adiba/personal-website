@@ -1,25 +1,25 @@
-import Header from "@/components/homepage/Header";
-import gsap from "gsap";
-import Image from "next/image";
-import React, { useEffect } from "react";
+import Header from '@/components/homepage/Header';
+import gsap from 'gsap';
+import Image from 'next/image';
+import React, { useEffect } from 'react';
 
 function Home() {
   const count = 200;
-  const particleClass = "h-1 w-1 bg-white rounded-full";
-  const particleColors = ["#aa00e2", "#7a169c", "#9e67b1"];
+  const particleClass = 'h-1 w-1 bg-white rounded-full';
+  const particleColors = ['#aa00e2', '#7a169c', '#9e67b1'];
   const starCount = 500;
-  const starClass = "h-1 w-1 rounded-full ";
-  const starColors = ["#52616B", "#F0F5F9"];
+  const starClass = 'h-1 w-1 rounded-full ';
+  const starColors = ['#52616B', '#F0F5F9'];
 
   const stationaryStarAnim = () => {
-    const container = document.getElementById("field");
+    const container = document.getElementById('field');
     let w = container.offsetWidth;
     let h = container.offsetHeight;
     let star;
     let randNum;
 
     for (let i = 0; i <= starCount; i++) {
-      star = document.createElement("div");
+      star = document.createElement('div');
       star.className = starClass;
       container?.appendChild(star);
       randNum = Math.random();
@@ -36,7 +36,7 @@ function Home() {
           delay: -10,
           stagger: 1,
           opacity: 0,
-          ease: "power1.in",
+          ease: 'power1.in',
           yoyo: true,
           repeat: -1,
           duration: gsap.utils.random(1, 3),
@@ -46,8 +46,8 @@ function Home() {
   };
 
   const movingAstronautAnim = () => {
-    const avatar = document.getElementById("avatar");
-    const container = document.getElementById("avatarContainer");
+    const avatar = document.getElementById('avatar');
+    const container = document.getElementById('avatarContainer');
     const w = container.offsetWidth;
     const h = container.offsetHeight;
 
@@ -63,16 +63,16 @@ function Home() {
       {
         x: w,
         y: h * 0.25,
-        ease: "none",
+        ease: 'none',
         scale: 0.75,
         rotation: 180,
         duration: 8,
-      }
+      },
     );
     tl.to(avatar, {
       x: w * 0.3,
       y: h,
-      ease: "none",
+      ease: 'none',
       rotation: 360,
       scale: 0.3,
       duration: 4,
@@ -82,7 +82,7 @@ function Home() {
     tl.to(avatar, {
       x: w * 0.25,
       y: -h,
-      ease: "none",
+      ease: 'none',
       rotation: 180,
       duration: 10,
       delay: 2,
@@ -103,41 +103,41 @@ function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col w-screen h-full">
+    <div className="flex h-full w-screen flex-col">
       {/* Header */}
-      <section className="relative bg-gradient-radial from-[rgba(86,28,110,0.6)_0%] to-[rgb(0,0,0)_120%] h-screen w-full overflow-hidden">
-        <div id="avatarContainer" className="flex w-full h-full absolute">
+      <section className="relative h-screen w-full overflow-hidden bg-gradient-radial from-[rgba(86,28,110,0.6)_0%] to-[rgb(0,0,0)_120%]">
+        <div id="avatarContainer" className="absolute flex h-full w-full">
           <Image
             id="avatar"
-            src={"/astronaut.png"}
+            src={'/astronaut.png'}
             width={400}
             height={400}
             alt="astronaut"
-            className="w-[300px] h-[300px]"
+            className="h-[300px] w-[300px]"
           />
         </div>
-        <div className="absolute bottom-[-980px] flex justify-center items-center w-full">
+        <div className="absolute bottom-[-980px] flex w-full items-center justify-center">
           <Image
-            src={"/planet.png"}
+            src={'/planet.png'}
             height={1000}
             width={1000}
             alt="mars"
-            className="w-[1200px] h-auto"
+            className="h-auto w-[1200px]"
           />
         </div>
         <div
           id="field"
-          className="absolute w-screen h-screen overflow-hidden justify-center top-0 z-0 bg-gradient-ellipse from-[rgba(255,147,15,0.4)_0%] to-[rgba(0,0,0,0)_50%]"
+          className="absolute top-0 z-0 h-screen w-screen justify-center overflow-hidden bg-gradient-ellipse from-[rgba(255,147,15,0.4)_0%] to-[rgba(0,0,0,0)_50%]"
         ></div>
-        <div className="relative w-full flex lg:w-[1440px] lg:mx-auto mx-0">
+        <div className="relative mx-0 flex w-full lg:mx-auto lg:w-[1440px]">
           <Header />
-          <div className="flex h-full w-full justify-center items-center absolute z-10">
+          <div className="absolute z-10 flex h-full w-full items-center justify-center">
             <Image
-              src={"/satellite.png"}
+              src={'/satellite.png'}
               width={600}
               height={600}
               alt="satellite"
-              className="w-[720px] h-auto "
+              className="h-auto w-[720px]"
             />
           </div>
         </div>
@@ -146,7 +146,7 @@ function Home() {
       {/* Content */}
       <section className="w-full">
         <div>
-          <Image src={"/mars.png"} width={1449} height={900} alt="mars" />
+          <Image src={'/mars.png'} width={1449} height={900} alt="mars" />
         </div>
       </section>
     </div>

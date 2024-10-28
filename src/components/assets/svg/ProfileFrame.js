@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 export const ProfileFrame = ({
   className,
   gradientColors,
-  gradientId = "customGradient",
+  gradientId = 'customGradient',
   gradientOpacity = [1, 1],
 }) => {
   return (
