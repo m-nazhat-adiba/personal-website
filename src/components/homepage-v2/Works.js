@@ -184,8 +184,8 @@ export const Works = () => {
         className="mySwiper"
       >
         {worksData.map((item, key) => (
-          <SwiperSlide>
-            <WorkPanel porto={item} id={key} key={key} />
+          <SwiperSlide key={key}>
+            <WorkPanel porto={item} id={key} />
           </SwiperSlide>
         ))}
       </Swiper>
