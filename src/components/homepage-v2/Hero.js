@@ -3,6 +3,7 @@ import React from 'react';
 import { ProfileFrame } from '../assets/svg/ProfileFrame';
 import Image from 'next/image';
 import clsx from 'clsx';
+import Link from 'next/link';
 
 export const Hero = ({ playback, track }) => {
   return (
@@ -41,8 +42,18 @@ export const Hero = ({ playback, track }) => {
         </div>
         {/* social */}
         <div className="absolute right-[2%] top-0 flex h-1/2 flex-col justify-center gap-8 text-white">
-          <Icon className="h-auto w-7" icon="akar-icons:linkedin-fill" />
-          <Icon className="h-auto w-7" icon="akar-icons:github-fill" />
+          <a href="https://www.linkedin.com/in/mnadiba/" target={'_blank'}>
+            <Icon
+              className="h-auto w-7 hover:cursor-pointer"
+              icon="akar-icons:linkedin-fill"
+            />
+          </a>
+          <a href="https://github.com/m-nazhat-adiba" target={'_blank'}>
+            <Icon
+              className="h-auto w-7 hover:cursor-pointer"
+              icon="akar-icons:github-fill"
+            />
+          </a>
           <Icon className="h-auto w-7" icon="akar-icons:envelope" />
         </div>
         {/* profile */}

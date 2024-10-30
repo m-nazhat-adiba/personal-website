@@ -177,10 +177,6 @@ export default function Home() {
   }, []);
 
   useGSAP(() => {
-    gsap.set('#hero-overlay', {
-      opacity: 0,
-    });
-
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.parent',
@@ -199,9 +195,14 @@ export default function Home() {
     });
 
     tl.add(
-      gsap.to('#hero-overlay', {
-        opacity: '70%',
-      }),
+      gsap.fromTo(
+        '#hero',
+        { opacity: '100%' },
+        {
+          opacity: '50%',
+          ease: 'back.out',
+        },
+      ),
       0,
     );
   });
@@ -274,10 +275,6 @@ export default function Home() {
 
         {/* TRANSITION */}
         <section
-          id="hero-overlay"
-          className="absolute top-0 z-50 h-screen w-screen bg-black"
-        ></section>
-        <section
           id="works-transition"
           className="panel absolute top-[100vh] z-50 flex w-screen flex-col gap-4 bg-fuchsia-700 p-10 text-black"
         >
@@ -319,7 +316,9 @@ export default function Home() {
       </main>
 
       {/* Mobile View */}
-      <main className="flex lg:hidden">Open in Your Desktop</main>
+      <main className="flex h-screen w-screen items-center justify-center lg:hidden">
+        <h1>Use Desktop for Full Experiences</h1>
+      </main>
 
       {/* SPOTIFY WIDGET */}
       <div className="absolute z-[-99999] h-0 w-0">
