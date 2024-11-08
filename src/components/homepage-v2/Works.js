@@ -5,7 +5,6 @@ import Image from 'next/image';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { RoughEase } from 'gsap/dist/EasePack';
 import { useGSAP } from '@gsap/react';
-import { Icon } from '@iconify/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -16,6 +15,7 @@ import 'swiper/css/pagination';
 // import required modules
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 import { getWorks } from '@/services/getSupabase';
+import { useSupabaseFetch } from '@/hooks/useSupabaseFetch';
 
 const WorkPanel = ({ porto, id }) => {
   return (
@@ -87,7 +87,7 @@ export const Works = () => {
 
   const uiRef = useRef();
 
-  const { data: worksData, error, loading } = getWorks();
+  const { data: worksData, error, loading } = useSupabaseFetch(getWorks);
 
   const wiggleParallax = (e, target, movement) => {
     const container = document.getElementById('room');
