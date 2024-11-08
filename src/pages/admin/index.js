@@ -1,3 +1,4 @@
+import { useSupabaseFetch } from '@/hooks/useSupabaseFetch';
 import { getStacks } from '@/services/getSupabase';
 import { updateWorks } from '@/services/updateSupabase';
 import { createSupabaseClient } from '@/utils/supabase/client';
@@ -12,7 +13,7 @@ const Admin = () => {
   const [image, setImage] = useState();
   const [imageUrl, setImageUrl] = useState();
 
-  const { data, error, loading } = getStacks();
+  const { data, error, loading } = useSupabaseFetch(getStacks);
 
   const handleStackChange = (event) => {
     const { name, checked } = event.target;
