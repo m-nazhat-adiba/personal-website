@@ -1,4 +1,3 @@
-import worksData from '@/dummy_data/works';
 import gsap from 'gsap';
 import React, { useEffect, useRef, useState } from 'react';
 import { SkillCard } from '../common/cards/SkillCard';
@@ -16,6 +15,7 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { getWorks } from '@/services/getSupabase';
 
 const WorkPanel = ({ porto, id }) => {
   return (
@@ -25,9 +25,14 @@ const WorkPanel = ({ porto, id }) => {
           <span className="h-full w-4 skew-x-12 bg-[#5fcdd9] shadow-lg shadow-[#5fcdd9]" />
           <span className="h-full w-4 skew-x-12 bg-[#5fcdd9] shadow-lg shadow-[#5fcdd9]" />
           <span className="h-full w-4 skew-x-12 bg-[#5fcdd9] shadow-lg shadow-[#5fcdd9]" />
-          <span className="ml-4 flex justify-start text-end text-3xl font-semibold text-[#5fcdd9] shadow-[#5fcdd9] [text-shadow:_1px_0_10px_var(--tw-shadow-color)]">
+          <span className="ml-4 flex flex-grow justify-start text-end text-3xl font-semibold text-[#5fcdd9] shadow-[#5fcdd9] [text-shadow:_1px_0_10px_var(--tw-shadow-color)]">
             {`PROJECT 0${id + 1}`}
           </span>
+          <a href={porto.link_url} target={'_blank'}>
+            <div className="flex h-full items-center justify-center text-end text-base font-semibold text-[#5fcdd9] shadow-[#5fcdd9] [text-shadow:_1px_0_10px_var(--tw-shadow-color)]">
+              Visit Link
+            </div>
+          </a>
         </div>
         <div className="mt-4 flex h-auto w-full flex-row-reverse items-start justify-center gap-8">
           {/* preview */}
@@ -38,7 +43,7 @@ const WorkPanel = ({ porto, id }) => {
               </span>
               <span className="shadow-[#5fcdd9 mb-2 flex h-1 w-full rounded-full bg-[#5fcdd9] shadow-xl"></span>
               <Image
-                src={porto.src}
+                src={porto.image_url}
                 height={450}
                 width={800}
                 alt={porto.title}
@@ -52,20 +57,20 @@ const WorkPanel = ({ porto, id }) => {
               BRIEF
             </span>
             <span className="mb-2 flex h-1 w-full rounded-full bg-[#5fcdd9] shadow-xl shadow-[#5fcdd9]"></span>
-            <div className="flex h-auto w-full flex-col justify-start rounded-lg bg-black bg-opacity-50 px-8 pb-12 pt-8">
+            <div className="flex h-auto w-full flex-col justify-start rounded-lg bg-black bg-opacity-70 px-8 pb-12 pt-8">
               <span className="text-xs text-[#5fcdd9]">TITLE</span>
               <h1 className="mb-5 text-3xl text-[#5fcdd9]">
                 {porto.title.toUpperCase()}
               </h1>
               <span className="text-xs text-[#5fcdd9]">DESC</span>
-              <p className="text-lg text-[#5fcdd9]">{porto.desc}</p>
+              <p className="text-lg text-[#5fcdd9]">{porto.description}</p>
             </div>
             <div className="mt-4 flex h-auto w-full flex-col gap-4 px-8">
               <span className="text-xs text-[#5fcdd9] shadow-[#5fcdd9] [text-shadow:_1px_0_10px_var(--tw-shadow-color)]">
                 STACKS
               </span>
               <div className="grid w-full grid-cols-5 gap-3">
-                {porto.tags.map((item, key) => (
+                {porto.stacks.map((item, key) => (
                   <SkillCard data={item} key={key} />
                 ))}
               </div>
@@ -81,6 +86,8 @@ export const Works = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   const uiRef = useRef();
+
+  const { data: worksData, error, loading } = getWorks();
 
   const wiggleParallax = (e, target, movement) => {
     const container = document.getElementById('room');
@@ -170,8 +177,8 @@ export const Works = () => {
         effect={'coverflow'}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={'auto'}
-        initialSlide={2}
+        slidesPerView={1}
+        initialSlide={0}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -183,11 +190,12 @@ export const Works = () => {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {worksData.map((item, key) => (
-          <SwiperSlide key={key}>
-            <WorkPanel porto={item} id={key} />
-          </SwiperSlide>
-        ))}
+        {worksData &&
+          worksData.map((item, key) => (
+            <SwiperSlide key={key}>
+              <WorkPanel porto={item} id={key} />
+            </SwiperSlide>
+          ))}
       </Swiper>
     </section>
   );

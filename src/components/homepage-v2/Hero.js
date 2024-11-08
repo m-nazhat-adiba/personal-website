@@ -3,7 +3,6 @@ import React from 'react';
 import { ProfileFrame } from '../assets/svg/ProfileFrame';
 import Image from 'next/image';
 import clsx from 'clsx';
-import Link from 'next/link';
 
 export const Hero = ({ playback, track }) => {
   return (

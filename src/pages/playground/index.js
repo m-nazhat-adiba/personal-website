@@ -1,54 +1,51 @@
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { createSupabaseClient } from '@/utils/supabase/client';
 
 const Playground = () => {
-  gsap.registerPlugin(ScrollTrigger);
+  const [notes, setNotes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    gsap.utils.toArray('section').forEach((section, i) => {
-      const test = section.querySelector('#test');
-      ScrollTrigger.create({
-        trigger: section,
-        pin: true,
-        pinSpacing: !!test,
-        markers: { indent: 150 * i },
-        id: 'pin' + (i + 1),
-      });
-    });
+    const fetchNotes = async () => {
+      try {
+        const supabase = createSupabaseClient();
+        const { data, error } = await supabase.from('notes').select();
+
+        if (error) {
+          throw error;
+        }
+
+        setNotes(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchNotes();
   }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+
   return (
-    <main className="flex h-full w-screen max-w-[100vw] flex-col">
-      <section
-        id="section_1"
-        className="flex min-h-[100vh] flex-col items-center justify-center bg-black p-[15px]"
-      >
-        <h1>Section 1</h1>
-      </section>
-      <section
-        id="section_2"
-        className="flex min-h-[100vh] w-full items-center justify-center bg-fuchsia-700 p-[15px]"
-      >
-        <div
-          id="test"
-          className="flex h-1/2 w-screen items-center justify-center bg-green-700"
-        >
-          Test
-        </div>
-        <div
-          id="test"
-          className="flex h-1/2 w-screen items-center justify-center bg-green-400"
-        >
-          Test
-        </div>
-      </section>
-      <section
-        id="section_3"
-        className="flex min-h-[100vh] flex-col items-center justify-center bg-blue-800 p-[15px]"
-      >
-        <h1>Section 3</h1>
-      </section>
-    </main>
+    <div>
+      <h1>Notes</h1>
+      {notes.length > 0 ? (
+        <ul>
+          {notes.map((note) => (
+            <li key={note.id}>
+              <h2>{note.title}</h2>
+              <p>{note.content}</p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No notes found.</p>
+      )}
+    </div>
   );
 };
 

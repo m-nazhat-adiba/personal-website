@@ -32,7 +32,7 @@ export const SkillCard = ({ data }) => {
             icon="nonicons:javascript-16"
           />
         );
-      case 'Tailwind':
+      case 'Tailwind CSS':
         return (
           <Icon
             className="h-auto w-full p-2 text-fuchsia-500 shadow-fuchsia-400 [text-shadow:_1px_0_10px_var(--tw-shadow-color)]"
@@ -49,7 +49,7 @@ export const SkillCard = ({ data }) => {
   };
 
   return (
-    <div className="h-full w-full bg-gray-700 bg-opacity-50 p-1">
+    <div className="flex h-full w-full items-center justify-center bg-gray-700 bg-opacity-50 p-1">
       <IconSelector />
     </div>
   );
