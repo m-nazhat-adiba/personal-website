@@ -1,8 +1,10 @@
+import { useAuth } from '@/context/AuthProvider';
 import { useSupabaseFetch } from '@/hooks/useSupabaseFetch';
 import { getStacks } from '@/services/getSupabase';
 import { updateWorks } from '@/services/updateSupabase';
 import { createSupabaseClient } from '@/utils/supabase/client';
-import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
 
 const Admin = () => {
   const [title, setTitle] = useState('');
@@ -12,8 +14,17 @@ const Admin = () => {
   const [selectedStacks, setSelectedStacks] = useState([]);
   const [image, setImage] = useState();
   const [imageUrl, setImageUrl] = useState();
+  const router = useRouter();
 
   const { data, error, loading } = useSupabaseFetch(getStacks);
+  const { user, loadingAuth, logout } = useAuth();
+
+  useEffect(() => {
+    console.log(user, loadingAuth);
+    if (!user && !loadingAuth) {
+      router.push('/login');
+    }
+  }, [user, loadingAuth]);
 
   const handleStackChange = (event) => {
     const { name, checked } = event.target;
@@ -85,8 +96,14 @@ const Admin = () => {
     updateWorks(payload);
   };
 
+  const handleLogout = () => {
+    logout(); // Call the logout function
+    // Optionally, redirect the user to the login page
+    router.push('/login');
+  };
+
   return (
-    <main className="container mx-auto my-10">
+    <main className="container mx-auto flex h-screen w-screen flex-col justify-between py-10">
       <section>
         <h1 className="mb-10 text-xl">Add Portfolio</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -124,6 +141,9 @@ const Admin = () => {
           <button type="submit">Submit</button>
         </form>
       </section>
+      <button onClick={handleLogout} className="w-full">
+        LOGOUT
+      </button>
     </main>
   );
 };

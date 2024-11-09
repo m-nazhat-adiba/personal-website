@@ -1,6 +1,7 @@
 import { NextUIProvider } from '@nextui-org/react';
 import { Orbitron } from 'next/font/google';
 import '@/styles/globals.css';
+import AuthProvider from '@/context/AuthProvider';
 
 const orbitron = Orbitron({
   subsets: ['latin'],
@@ -10,9 +11,11 @@ const orbitron = Orbitron({
 export default function App({ Component, pageProps }) {
   return (
     <NextUIProvider>
-      <div className={orbitron.className}>
-        <Component {...pageProps} />
-      </div>
+      <AuthProvider>
+        <div className={orbitron.className}>
+          <Component {...pageProps} />
+        </div>
+      </AuthProvider>
     </NextUIProvider>
   );
 }
