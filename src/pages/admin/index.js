@@ -97,13 +97,12 @@ const Admin = () => {
   };
 
   const handleLogout = () => {
-    logout(); // Call the logout function
-    // Optionally, redirect the user to the login page
+    logout();
     router.push('/login');
   };
 
   return (
-    <main className="container mx-auto flex h-screen w-screen flex-col justify-between py-10">
+    <main className="container mx-auto flex h-screen w-screen flex-col justify-between gap-10 py-10">
       <section>
         <h1 className="mb-10 text-xl">Add Portfolio</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
