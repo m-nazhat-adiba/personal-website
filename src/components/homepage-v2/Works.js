@@ -87,7 +87,20 @@ export const Works = () => {
 
   const uiRef = useRef();
 
-  const { data: worksData, error, loading } = useSupabaseFetch(getWorks);
+  // const { data: worksData, error, loading } = useSupabaseFetch(getWorks);
+
+  // Dummy data for testing
+  const worksData = [
+    {
+      id: 1,
+      title: "Online Ordering System",
+      description: "A web-based ordering system for a coffee shop. It allows customers to order their coffee online and pick it up at the store.",
+      image_url: "/work-mudocafe.png",
+      link_url: "https://moini-admin.vercel.app/le.com",
+      stacks: [ 'React', 'Typescript', 'Next.js', 'Tailwind CSS', 'GSAP'
+      ]
+    }
+  ];
 
   const wiggleParallax = (e, target, movement) => {
     const container = document.getElementById('room');
